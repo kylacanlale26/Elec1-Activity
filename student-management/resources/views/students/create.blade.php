@@ -1,24 +1,26 @@
-@extents('layouts.app')
-
-@section('content')
-
-<h2>Add New Student</h2>
-
-<div class="card">
-    <div class="card-body">
-        @if($errors->any())
-            <div class="alert alert-danger">
-                <ul class="mb-0">
-                    @foreach($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
-
-        <form action="{{ route('students.store') }}" method="POST">
-            @csrf
-
+ 
+@extends('layouts.app') 
+ 
+@section('content') 
+ 
+<h2>Add New Student</h2> 
+ 
+<div class="card"> 
+    <div class="card-body"> 
+ 
+        @if($errors->any()) 
+            <div class="alert alert-danger"> 
+                <ul class="mb-0"> 
+                    @foreach($errors->all() as $error) 
+                        <li>{{ $error }}</li> 
+                    @endforeach 
+                </ul> 
+            </div> 
+        @endif 
+ 
+        <form action="{{ route('students.store') }}" method="POST"> 
+            @csrf 
+ 
             <div class="mb-3"> 
                 <label class="form-label">Student Number</label> 
                 <input type="text" 
@@ -26,8 +28,8 @@
                        class="form-control" 
                        value="{{ old('student_number') }}" 
                        required> 
-            </div>
-
+            </div> 
+ 
             <div class="mb-3"> 
                 <label class="form-label">First Name</label> 
                 <input type="text" 
@@ -35,8 +37,8 @@
                        class="form-control" 
                        value="{{ old('first_name') }}" 
                        required> 
-            </div>
-
+            </div> 
+ 
             <div class="mb-3"> 
                 <label class="form-label">Last Name</label> 
                 <input type="text" 
@@ -45,7 +47,7 @@
                        value="{{ old('last_name') }}" 
                        required> 
             </div> 
-
+ 
             <div class="mb-3"> 
                 <label class="form-label">Email Address</label> 
                 <input type="email" 
@@ -53,8 +55,8 @@
                        class="form-control" 
                        value="{{ old('email') }}" 
                        required> 
-            </div>
-
+            </div> 
+ 
             <div class="mb-3"> 
                 <label class="form-label">Course</label> 
                 <input type="text" 
@@ -63,16 +65,17 @@
                        value="{{ old('course') }}" 
                        required> 
             </div> 
-
+ 
             <button type="submit" class="btn btn-success"> 
                 Save Student 
             </button> 
-
+ 
             <a href="{{ route('students.index') }}" class="btn btn-secondary"> 
                 Cancel 
-            </a>
-        </form>
-    </div>
-</div>
-
+            </a> 
+        </form> 
+ 
+    </div> 
+</div> 
+ 
 @endsection
