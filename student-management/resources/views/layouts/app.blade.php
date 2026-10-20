@@ -11,7 +11,7 @@
     
     <nav class="navbar navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="{{ route('student.index') }}">
+            <a class="navbar-brand" href="{{ route('students.index') }}">
                 Student Management System
             </a>
         </div>

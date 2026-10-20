@@ -22,7 +22,7 @@
             </tr>
         </thead>
         <tbody>
-            @forelse($students as student)
+            @forelse($students as $student)
                 <tr>
                     <td>{{ $student->student_number }}</td> 
                     <td>{{ $student->first_name }} {{ $student->last_name }}</td> 
