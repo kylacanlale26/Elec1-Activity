@@ -22,7 +22,7 @@ class StudentController extends Controller
      */
     public function create()
     {
-        return view('student.create');
+        return view('students.create');
     }
 
     /**
@@ -40,7 +40,7 @@ class StudentController extends Controller
 
         Student::create($validated);
 
-        return redirect()->route('student.index')->with('success', 'Student Added successfully!');
+        return redirect()->route('students.index')->with('success', 'Student Added successfully!');
     }
 
     /**
@@ -48,7 +48,7 @@ class StudentController extends Controller
      */
     public function show(string $id)
     {
-        return view('student.show', compact('student'));
+        return view('students.show', compact('student'));
     }
 
     /**
@@ -56,7 +56,7 @@ class StudentController extends Controller
      */
     public function edit(string $id)
     {
-        return view('student.edit', compact('student'));
+        return view('students.edit', compact('student'));
     }
 
     /**
@@ -94,6 +94,6 @@ class StudentController extends Controller
     {
         $student->delete();
 
-        return redirect()->route('student.index')->with('success', 'Student deleted successfully!');
+        return redirect()->route('students.index')->with('success', 'Student deleted successfully!');
     }
 }
